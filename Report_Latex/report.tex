@@ -18,18 +18,34 @@
 \addbibresource{References.bib}    
 \usepackage[ddmmyyyy]{datetime}
 \usepackage{caption}
- 
+\usepackage[toc,page]{appendix}
+
+\usepackage{lipsum}
+
+%Remove word "chapter" but leave numbering
+\makeatletter
+\renewcommand{\@makechapterhead}[1]{%
+	\vspace*{50 pt}%
+	{\setlength{\parindent}{0pt} \raggedright \normalfont
+		\bfseries\Huge\thechapter.\ #1
+		\par\nobreak\vspace{40 pt}}}
+\makeatother
+
+
  
 \author{Karl Wallkum}
 
 
 \begin{document}
 	
-	\pagenumbering{arabic}
-	
+		
 	\input{Frontpage/titlepage}
-	
+		
 	\tableofcontents
+	
+	\thispagestyle{empty}
+	\clearpage
+	\pagenumbering{arabic}
 	
 	%\input{Assignment/Assignmentname}
 	
@@ -46,5 +62,10 @@
 	
 	\input{Timeplan/Timeplan}
 	
-	\input{Appendices/Appendix1}
+	\begin{appendices}
+		\input{Appendices/Appendix1}
+	\end{appendices}
+	
+	
+	
 \end{document}
