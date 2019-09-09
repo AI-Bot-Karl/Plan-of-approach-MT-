@@ -1,1 +1,40 @@
+% !TeX spellcheck = en_GB
+
 \chapter{Activities and Products}
+
+With regard to the goals, following activities need to be carried out which produce below mentioned Products.\\
+\\
+\underline{\textbf{Activities:}}\vspace{2mm}
+\begin{itemize}[leftmargin=5cm]
+	\item[\textbf{Mounting and Floorplan}] All parts involved in the process except from the press are not yet bolted to the ground. A floorplan needs to be developed based on simulations in Visual Components. Together with the team, and consultants from Quing this floorplan will be developed. Then the FANUC R-2000iC/210F together with all other components can be moved to their final position and bolted to the ground.
+	\item[\textbf{Wiring}] The FANUC R-2000iC/210F is not connected to power and to its accompanying R-30iB controller. Cables need to be connected to the robot and the controller.
+	\item[\textbf{Commissioning}] The FANUC R-2000iC/210F although being a second hand robot has never been put into operation at the SPC. The robot and its R-30iB controller need to  be placed into operation step by step with several function tests.
+	\item[\textbf{Fieldbus - Hardware}] A Profinet Fieldbus network needs to be designed and installed to connect all components with each other for exchange of data and commands. For this, an Ethernet network needs to be set up with a Profinet Stack. Twisted-Pair-Cables need to be cut in the right length and equipped with RJ45 connectors. Also additional network components like an industry grade switch for routing and Ethernet hubs as well as USB network adapters for package sniffing need  to be selected and procured. 
+	\item[\textbf{Fieldbus - Software}] To use Profinet, all involved network interfaces, input and output of Data and global commands and flags need to be configured to make all devices communicate with each other.   
+	\item[\textbf{label}] description
+\end{itemize}
+
+%1.5	Activities and products
+%
+%The activities leading to the successful completion of the objective are as follows:
+%1)	Existing wiring of the controller and safety features will be read and understood. This can be done through the company’s manual and if needed, with the help of an external expert.
+%2)	Apart from the press, every part involved in the process is unattached to the ground. To fix the robots and hence, begin programming it, can only begin after a floorplan is established. With the help of the team and guides, a floorplan will be made and every part will be fixed to the ground.
+%3)	A network will be set up with the help of Ethernet cables and hub to enable Profinet standards alongside Ethernet for communication between all the sub-processes of production
+%4)	Configuration of all network interfaces, input-output data and programming commands will be done to start communicating with all devices.
+%5)	A model of the 4-axis Fanuc M-3iA/6S will be made through simulation software (Roboguide or Visual Components)
+%6)	All sensors relevant to the Delta-bot’s function needs to be identified, wired to the input/output slots of the controller and then integrated into programming. Some useful sensors are:
+%a)	Inductive proximity sensors (located initially near the extruder) which signal that a composite material is arriving on the conveyor belt
+%b)	Load cell to sense the weight of the material when the robot picks it up.
+%c)	Photoelectric diffuse sensor to measure the distance between the robot and the composite part
+%7)	The Fanuc M-3iA/6S will be programmed using Siemens Simatic S7-1500 Programmable Logic Controller (PLC) keeping in mind safety considerations like emergency stops. It will then be able to understand when the composite material will reach the robot gripper after being released from the extruder; after which it can pick it up, measure its weight and place according to the information.
+%8)	A simulation by available software (Roboguide or Visual Components) will be made before testing on the robot; most errors will be detected and fixed here.
+%9)	Test runs and debugging will be done adhering to the Fanuc Controller manual (Fanuc, 2019, p. 12)
+%10)	Fine-tuning the coordination between all sub-processes will take place; this will account for the speed of the conveyor, extruder, sensitivity of load cell, status of press and so on.
+%11)	The draft of the report will be sent to the supervisor for feedback. After the errors are fixed, the final report and defense will take place.
+%
+%The products arising from the activities will be:
+%1)	Simulations:
+%a)	Floorplan for all major components involved in the process
+%b)	Model of the delta-bot (Fanuc M-3iA/6S)
+%c)	Control logic for the controller (R30iA)
+%2)	Major project report and presentation
