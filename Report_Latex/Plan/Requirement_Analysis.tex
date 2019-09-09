@@ -1,1 +1,22 @@
+% !TeX spellcheck = en_GB
+
 \chapter{Requirement Analysis}
+
+Certain conditions need to be fulfilled to make the project a full full success. 
+These can be split up into external and internal factors.\\
+\\
+\underline{\textbf{External requirements:}}\vspace{2mm}
+\begin{itemize}[leftmargin=5cm]
+	\item[\textbf{Power Supply}] In order to supply the whole production line with enough energy, 400A fuses need to be installed in the 400V 3-Phase building connection.
+	\item[\textbf{Surrounding Subprocesses}] All subprocesses (extruder with supply hopper, conveyors, delta robot with gripper, press with mould, robot gripper, oven with heat-shield) need to be in place and running on their own.
+	\item[\textbf{Test Material}] Some kind of test material needs to be supplied to demonstrate all abilities of the robot arm.
+\end{itemize}
+\bigskip
+\underline{\textbf{Internal requirements:}}\vspace{2mm}
+\begin{itemize}[leftmargin=5cm]
+	\item[\textbf{Fieldbus}] An Ethernet network needs to be set up to host the communication via Profinet between the subprocesses.
+	\item[\textbf{Software}] For simulation Roboguide along with Visual Components and for control Roboguide as well as TIA Portal need to be made available, installed and configured. 
+	\item[\textbf{Robot Placement}] The final placement of the robot is not yet determined and the robot needs to be bolted to the ground in its final position before it can be used.
+\end{itemize}
+\bigskip
+
