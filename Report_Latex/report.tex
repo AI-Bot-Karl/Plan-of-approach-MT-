@@ -1,7 +1,7 @@
 % !TeX spellcheck = <none>
 
 \documentclass[10pt,a4paper]{report}
-\usepackage[a4paper, left=2cm, right=2cm, top=2cm]{geometry}
+\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
 \usepackage[latin1]{inputenc}
 \usepackage[arabic, english]{babel}
 \usepackage{amsmath}
@@ -25,7 +25,21 @@
 \usepackage{enumitem}
 \usepackage{multicol}%try it out!
 
-\usepackage{lipsum}
+
+
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother
+
+
+\newcommand*\wildcard[2][6cm]{\vspace*{2cm}\parbox{#1}{\hrulefill\par#2}} %Wildcard for Signature line
+
+\usepackage{lipsum} %random text
+
+
+
 
 %Remove word "chapter" but leave numbering
 \makeatletter
@@ -35,6 +49,11 @@
 		\bfseries\Huge\thechapter.\ #1
 		\par\nobreak\vspace{40 pt}}}
 \makeatother
+
+\usepackage[]{titlesec}
+\titleformat{\chapter}[hang]{\huge\sffamily\bfseries}{}{0pt}{}[\hrule\vspace*{-23pt}] 
+
+
 
 
  
@@ -56,22 +75,26 @@
 	
 	\input{Intro/Background}
 	\input{Intro/Problem_definition}
+	\newpage
 	\input{Intro/Project_Objectives}
 	
 	\input{Plan/Requirement_Analysis}
 	\input{Plan/Activities_and_Products}
+	\newpage
 	\input{Intro/Organization}
 	\input{Plan/Master_level}
+	\newpage
 	\input{Plan/Restrictions}
 	
 	\renewcommand{\bibname}{References}
 	\printbibliography
+	\newpage
 	
 	\input{Timeplan/Timeplan}
 	
-	\begin{appendices}
-		\input{Appendices/Appendix1}
-	\end{appendices}
+%	\begin{appendices}
+%		\input{Appendices/Appendix1}
+%	\end{appendices}
 	
 	
 	
