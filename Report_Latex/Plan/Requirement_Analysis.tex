@@ -1,23 +1,109 @@
-% !TeX spellcheck = <none>
+% !TeX spellcheck = en_GB
 
 \chapter{Requirement Analysis}
 
-Certain conditions need to be fulfilled to make the project a full full success. 
-These can be split up into external and internal factors.\\
+To deem the project a full success following requirements need to be fulfilled:
 \\
-\underline{\textbf{External requirements:}}\vspace{2mm}
+\underline{\textbf{Software requirements}}\vspace{2mm}\\
+As the robot will be digitally twinned, certain goals in software need to be achieved:\\
 \begin{itemize}[leftmargin=5cm]
-	\item[\textbf{Power Supply}] In order to supply the whole production line with enough energy, 400A fuses need to be installed in the 400V 3-Phase building connection.
-	\item[\textbf{Surrounding Subprocesses}] All subprocesses (extruder with supply hopper, conveyors, delta robot with gripper, press with mould, robot gripper, oven with heat-shield) need to be in place and running on their own.
-	\item[\textbf{Test Material}] Some kind of test material needs to be supplied to demonstrate all abilities of the robot arm.
+	\item[\textbf{Program Transfer}] The program transfer from Visual components to the R-30iA controller needs to be optimized and work seamlessly\\
+	\textit{LS or TP programs need to be exported from VC to the R-30iA controller without additional edits}
 \end{itemize}
-\bigskip
-\underline{\textbf{Internal requirements:}}\vspace{2mm}
+%
+\underline{\textbf{Functional requirements:}}\vspace{2mm}\\
+The robot needs to be capable of fulfilling following functions:\\
 \begin{itemize}[leftmargin=5cm]
-	\item[\textbf{Fieldbus}] An Ethernet network needs to be set up to host the communication via Profinet between the subprocesses.
-	\item[\textbf{Software}] For simulation Visual Components and for control ROBOGUIDE with Karol Programming Language as well as TIA Portal need to be made available, installed and configured. 
-	\item[\textbf{Robot Placement}] The final placement of the robot is not yet determined and the robot needs to be bolted to the ground in its final position before it can be used.
-	\item[\textbf{Robotic Gripper}] Another member of the SPC-team, Laurence Potter, currently develops a robotic gripper for dual functionality of picking the raw assemblies as well as the final product. The progress needs to be monitored and design choices need to comply with control choices.
+	\item[\textbf{Movements}] The robot needs to be able to execute all desired movements within its working range\\
+	\textit{The Robot needs to make a picking and placing movement for the press from and to conveyor belts}
+	\item[\textbf{Communication}] The Robot needs to communicate to the PLC via Profinet. \\
+	\textit{The PLC and the robot need to have a handshake via Profinet}
+	\item[\textbf{Position tracking}] The Robot needs to send its position via the PLC to Visual components\\
+	\textit{Position of the tool-head in XYZ need to be transmitted to VC}
+	\item[\textbf{Movement authority}] The robot needs to receive movement authority from the PLC and apply the right action based on the given movement authority\\
+	\textit{The Robot should be started automatically in auto mode via the PLC with no manual pressing of the cycle start button and run a program chosen or given by the PLC}
 \end{itemize}
-\bigskip
+%
+\underline{\textbf{Safety requirements:}}\vspace{2mm}\\
+As the robot is used in a laboratory environment special precautions that differ from a standard production cell need to be set in place:\\
+\begin{itemize}[leftmargin=5cm]
+	\item[\textbf{Safety manual}] A short and precise safety manual needs to be created for the robot in this specific laboratory environment\\
+	\textit{The safety manual needs to contain specific information for Programmers, Operators and other people working in the vicinty of the robot }
+	\item[\textbf{Acoustic or visual feedback}] As the robot is used in a laboratory environment, where it cannot be guaranteed at any time that a person gets close to its working range, feedback needs to be given shortly before movements are executed.	\\
+	\textit{A warning light or other feedback equipement needs to be activated when the robot starts moving}
+\end{itemize}
+%
+\underline{\textbf{Security requirements:}}\vspace{2mm}\\
+All machinery in the production line will be connected to other systems via the internet. This throws up several security questions:\\
+\begin{itemize}[leftmargin=5cm]
+	\item[\textbf{Risks}] Risks regarding external connectivity and the resulting threats need to be outlined\\
+	\textit{An Evalutaion of potential intrusion strategies needs to be worked out}
+	\item[\textbf{Firewall}] If the machines are connected to the local network at SPC, a firewall solution needs to be set in place\\
+	\textit{A firewall needs to be set in place between the company network and the Perimeter Network + Fieldbus}
+\end{itemize}
+%
+\underline{\textbf{Performance requirements:}}\vspace{2mm}\\
+The goal of the Production line is to minimize cycle time for FRC parts. This puts certain demands on the robot:\\
+\begin{itemize}[leftmargin=5cm]
+	\item[\textbf{Robot cycle time}] Every minute one part has to be produced. The robot needs to fulfill all movements within that cycle time\\
+	\textit{An Control strategy with a maximum cycle time of 45 seconds needs to be found}
+\end{itemize}
+%
+\underline{\textbf{Documentation requirements:}}\vspace{2mm}\\
+As the SPC is a flexible working environment with changing teams, good documentation is key for a good handover to following teams\\
+\begin{itemize}[leftmargin=5cm]
+	\item[\textbf{Programmer manual}] Many configurations and Programs were tested on the robot. Following teams should have an easy start.\\
+	\textit{A Programmer manual with wiring, configuration and a quickstart guide needs to be made} 
+\end{itemize}
+%
+\underline{\textbf{Maintenance requirements:}}\vspace{2mm}\\
+As the robot is used in a laboratory setting, some parts are used more excessively than in a normal production setting\\
+\begin{itemize}[leftmargin=5cm]
+	\item[\textbf{Brake inspection}] As the E-stop is used relatively often, they will need to be replaced earlier than usueal\\
+	\textit{An annual inspection with FANUC needs to be scheduled.}
+\end{itemize}
+%
+%\underline{\textbf{xy requirements:}}\vspace{2mm}\\
+%Description Text\\
+%\begin{itemize}[leftmargin=5cm]
+%	\item[\textbf{label}] description
+%\end{itemize}
+
+
+
+
+%Requirement - Rationale - Test Method/acceptance criteria
+%
+%break down to detailed requirements 
+%performance  
+%safety 
+%security 
+%service and maintenance
+%
+%Requirements for my project to be fulifilled in order to determine the success of the project
+%
+%----
+%Conditions go to last point
+%
+%requirements family with children 1,2,3 - 4 
+%4 inherits from 3....
+%
+%Certain conditions need to be fulfilled to make the project a full full success. 
+%These can be split up into external and internal factors.\\
+%\\
+%\underline{\textbf{External requirements:}}\vspace{2mm}
+%\begin{itemize}[leftmargin=5cm]
+%	\item[\textbf{Power Supply}] In order to supply the whole production line with enough energy, 400A fuses need to be installed in the 400V 3-Phase building connection.
+%	\item[\textbf{Surrounding Subprocesses}] All subprocesses (extruder with supply hopper, conveyors, delta robot with gripper, press with mould, robot gripper, oven with heat-shield) need to be in place and running on their own.
+%	\item[\textbf{Test Material}] Some kind of test material needs to be supplied to demonstrate all abilities of the robot arm.
+%\end{itemize}
+%\bigskip
+%\underline{\textbf{Internal requirements:}}\vspace{2mm}
+%\begin{itemize}[leftmargin=5cm]
+%	\item[\textbf{Fieldbus}] An Ethernet network needs to be set up to host the communication via Profinet between the subprocesses.
+%	\item[\textbf{Software}] For simulation Visual Components and for control ROBOGUIDE with Karol Programming Language as well as TIA Portal need to be made available, installed and configured. 
+%	\item[\textbf{Robot Placement}] The final placement of the robot is not yet determined and the robot needs to be bolted to the ground in its final position before it can be used.
+%	\item[\textbf{Robotic Gripper}] Another member of the SPC-team, Laurence Potter, currently develops a robotic gripper for dual functionality of picking the raw assemblies as well as the final product. The progress needs to be monitored and design choices need to comply with control choices.
+%\end{itemize}
+%\bigskip
 
